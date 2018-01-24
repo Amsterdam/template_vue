@@ -13,10 +13,31 @@ const templateVersion = pkg.version
 
 const { addTestAnswers } = require('./scenarios')
 
+const standardAnswers = {
+    "isNotTest": true,
+    "author": "Datapunt Amsterdam",
+    "build": "standalone",
+    "router": true,
+    "lint": true,
+    "lintConfig": "standard",
+    "unit": true,
+    "runner": "jest",
+    "e2e": true,
+    "autoInstall": "npm"
+}
+
+addStandardAnswers = (metalsmith, options, helpers) => {
+    Object.assign(
+        metalsmith.metadata(),
+        standardAnswers,
+        {}
+    )
+}
+
 module.exports = {
   metalsmith: {
     // When running tests for the template, this adds answers for the selected scenario
-    before: addTestAnswers
+    before: addStandardAnswers
   },
   helpers: {
     if_or(v1, v2, options) {
@@ -31,7 +52,7 @@ module.exports = {
       return templateVersion
     },
   },
-  
+
   prompts: {
     name: {
       when: 'isNotTest',
@@ -52,80 +73,80 @@ module.exports = {
       message: 'Author',
       default: 'Amsterdam Datapunt'
     },
-    build: {
-      when: 'isNotTest',
-      type: 'list',
-      message: 'Vue build',
-      choices: [
-        {
-          name: 'Runtime + Compiler: recommended for most users',
-          value: 'standalone',
-          short: 'standalone',
-        }
-      ],
-    },
-    router: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Install vue-router?',
-    },
-    lint: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Use ESLint to lint your code?',
-    },
-    lintConfig: {
-      when: 'isNotTest && lint',
-      type: 'list',
-      message: 'Pick an ESLint preset',
-      choices: [
-        {
-          name: 'Standard (https://github.com/standard/standard)',
-          value: 'standard',
-          short: 'Standard',
-        },
-      ],
-    },
-    unit: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Set up unit tests',
-    },
-    runner: {
-      when: 'isNotTest && unit',
-      type: 'list',
-      message: 'Pick a test runner',
-      choices: [
-        {
-          name: 'Jest',
-          value: 'jest',
-          short: 'jest',
-        },
-        {
-          name: 'Karma and Mocha',
-          value: 'karma',
-          short: 'karma',
-        },
-      ],
-    },
-    e2e: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Setup e2e tests with Nightwatch?',
-    },
-    autoInstall: {
-      when: 'isNotTest',
-      type: 'list',
-      message:
-        'Should we run `npm install` for you after the project has been created? (recommended)',
-      choices: [
-        {
-          name: 'Yes, use NPM',
-          value: 'npm',
-          short: 'npm',
-        },
-      ],
-    },
+    // build: {
+    //   when: 'isNotTest',
+    //   type: 'list',
+    //   message: 'Vue build',
+    //   choices: [
+    //     {
+    //       name: 'Runtime + Compiler: recommended for most users',
+    //       value: 'standalone',
+    //       short: 'standalone',
+    //     }
+    //   ],
+    // },
+    // router: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: 'Install vue-router?',
+    // },
+    // lint: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: 'Use ESLint to lint your code?',
+    // },
+    // lintConfig: {
+    //   when: 'isNotTest && lint',
+    //   type: 'list',
+    //   message: 'Pick an ESLint preset',
+    //   choices: [
+    //     {
+    //       name: 'Standard (https://github.com/standard/standard)',
+    //       value: 'standard',
+    //       short: 'Standard',
+    //     },
+    //   ],
+    // },
+    // unit: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: 'Set up unit tests',
+    // },
+    // runner: {
+    //   when: 'isNotTest && unit',
+    //   type: 'list',
+    //   message: 'Pick a test runner',
+    //   choices: [
+    //     {
+    //       name: 'Jest',
+    //       value: 'jest',
+    //       short: 'jest',
+    //     },
+    //     {
+    //       name: 'Karma and Mocha',
+    //       value: 'karma',
+    //       short: 'karma',
+    //     },
+    //   ],
+    // },
+    // e2e: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: 'Setup e2e tests with Nightwatch?',
+    // },
+    // autoInstall: {
+    //   when: 'isNotTest',
+    //   type: 'list',
+    //   message:
+    //     'Should we run `npm install` for you after the project has been created? (recommended)',
+    //   choices: [
+    //     {
+    //       name: 'Yes, use NPM',
+    //       value: 'npm',
+    //       short: 'npm',
+    //     },
+    //   ],
+    // },
   },
   filters: {
     '.eslintrc.js': 'lint',
