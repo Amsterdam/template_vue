@@ -9,8 +9,6 @@ export default {
   mounted () {
     const svg = d3.select(this.$el)
       .append('svg')
-      .attr('width', 500)
-      .attr('height', 270)
 
     svg.append('circle')
       .style('stroke', 'gray')

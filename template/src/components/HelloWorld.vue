@@ -1,18 +1,35 @@
 <template>
   <div>
     <p>
-      \{{text}}
+      {{text}}
+    </p>
+    <p>
+      <router-link :to="{path: 'helloagain/' + text}">
+        Some link
+      </router-link>
     </p>
     <div>
-      <router-link :to="{path: 'helloagain/' + text}">
-        Hello Again
-      </router-link>
-    </div>
-    <div>
-      <d3-example></d3-example>
-    </div>
-    <div>
-      <vega-example></vega-example>
+      <table class="table table-sm table-striped table-bordered">
+        <thead class="text-center">
+        <tr>
+          <th colspan="2">Examples</th>
+        </tr>
+        <tr>
+          <th width="50%">D3</th>
+          <th>Vega</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        <tr>
+          <td>
+            <d3-example></d3-example>
+          </td>
+          <td>
+            <vega-example></vega-example>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
