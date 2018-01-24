@@ -8,17 +8,22 @@
         Hello Again
       </router-link>
     </div>
+    <div>
+      <d3-example></d3-example>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import helloAgain from './HelloAgain'
+import d3Example from './D3Example'
 
 export default {
   name: 'HelloWorld',
   components: {
-    'hello-again': helloAgain
+    'hello-again': helloAgain,
+    'd3-example': d3Example
   },
   computed: {
     ...mapGetters([
