@@ -50,6 +50,7 @@ module.exports = {
       when: 'isNotTest',
       type: 'string',
       message: 'Author',
+      default: 'Amsterdam Datapunt'
     },
     build: {
       when: 'isNotTest',
@@ -60,13 +61,7 @@ module.exports = {
           name: 'Runtime + Compiler: recommended for most users',
           value: 'standalone',
           short: 'standalone',
-        },
-        {
-          name:
-            'Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere',
-          value: 'runtime',
-          short: 'runtime',
-        },
+        }
       ],
     },
     router: {
@@ -88,16 +83,6 @@ module.exports = {
           name: 'Standard (https://github.com/standard/standard)',
           value: 'standard',
           short: 'Standard',
-        },
-        {
-          name: 'Airbnb (https://github.com/airbnb/javascript)',
-          value: 'airbnb',
-          short: 'Airbnb',
-        },
-        {
-          name: 'none (configure it yourself)',
-          value: 'none',
-          short: 'none',
         },
       ],
     },
@@ -121,11 +106,6 @@ module.exports = {
           value: 'karma',
           short: 'karma',
         },
-        {
-          name: 'none (configure it yourself)',
-          value: 'noTest',
-          short: 'noTest',
-        },
       ],
     },
     e2e: {
@@ -143,16 +123,6 @@ module.exports = {
           name: 'Yes, use NPM',
           value: 'npm',
           short: 'npm',
-        },
-        {
-          name: 'Yes, use Yarn',
-          value: 'yarn',
-          short: 'yarn',
-        },
-        {
-          name: 'No, I will handle that myself',
-          value: false,
-          short: 'no',
         },
       ],
     },
