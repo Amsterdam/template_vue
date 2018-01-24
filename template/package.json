@@ -30,7 +30,10 @@
     "axios": "^0.17.1",
     "vue-axios": "^2.0.2",
     "vuex": "^3.0.1",
-    "d3": "^4.12.2"
+    "d3": "^4.12.2",
+    "vega": "^3.0.9",
+    "vega-lite": "^2.0.4",
+    "vega-embed": "^3.0.0-rc7",
   },
   "devDependencies": {
     {{#lint}}

@@ -11,6 +11,9 @@
     <div>
       <d3-example></d3-example>
     </div>
+    <div>
+      <vega-example></vega-example>
+    </div>
   </div>
 </template>
 
@@ -18,12 +21,14 @@
 import { mapGetters } from 'vuex'
 import helloAgain from './HelloAgain'
 import d3Example from './D3Example'
+import vegaExample from './VegaExample'
 
 export default {
   name: 'HelloWorld',
   components: {
     'hello-again': helloAgain,
-    'd3-example': d3Example
+    'd3-example': d3Example,
+    'vega-example': vegaExample
   },
   computed: {
     ...mapGetters([
