@@ -28,13 +28,8 @@ let vueApp = new Vue({
   el: '#app',
   router,
   store,
-  {{#if_eq build "runtime"}}
-  render: h => h(App)
-  {{/if_eq}}
-  {{#if_eq build "standalone"}}
   components: { App },
   template: '<App/>',
-  {{/if_eq}}
   computed: {
   ...mapGetters([
       'text'
