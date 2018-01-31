@@ -1,11 +1,14 @@
-<!--Example of a component with a link-->
+<!--Example of a component with a link and how to watch for state changes-->
 <template>
   <div>
     <p>
-      {{text}}
+      \{{text}}
     </p>
     <p>
-      <router-link :to="{path: 'helloagain/' + text}">
+      <button type="button" class="btn" v-on:click="setText('any other text')">Change text</button>
+    </p>
+    <p>
+      <router-link :to="{name: 'HelloAgain', params: { text }}">
         Some link
       </router-link>
     </p>
@@ -40,7 +43,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import helloAgain from './HelloAgain'
 import d3Example from './D3Example'
 import vegaExample from './VegaExample'
@@ -58,6 +61,17 @@ export default {
     ...mapGetters([
       'text'
     ])
+  },
+  methods: {
+    ...mapActions({
+      setText: 'setText'
+    })
+  },
+  watch: {
+    'text' (to, from) {
+      // Example of a state change watch
+      alert('text has changed')
+    }
   }
 }
 </script>
