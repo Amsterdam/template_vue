@@ -1,3 +1,4 @@
+<!--Example of a component that accepts a paramater-->
 <template>
   <span>\{{text}}</span>
 </template>

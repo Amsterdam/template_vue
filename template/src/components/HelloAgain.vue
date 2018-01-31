@@ -1,3 +1,4 @@
+<!--Example of a component that calls another component with parameters-->
 <template>
   <div>
     <show-text :text="text"></show-text>

@@ -1,3 +1,4 @@
+<!--Example of a component that uses D3-->
 <template>
   <div></div>
 </template>

@@ -1,3 +1,4 @@
+<!--Example of a component that uses Leaflet-->
 <template>
   <div class="map"></div>
 </template>

@@ -1,3 +1,4 @@
+<!--Example of a component with a link-->
 <template>
   <div>
     <p>
