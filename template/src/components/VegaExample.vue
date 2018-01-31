@@ -1,8 +1,10 @@
 <template>
-  <div id="vegaexample"></div>
+  <div></div>
 </template>
 
 <script>
+import vegaEmbed from 'vega-embed'
+
 const vegaEmbedOptions = {
   'actions': {
     'export': false,
@@ -30,7 +32,7 @@ const vegaSpec = {
 
 export default {
   mounted () {
-    window.vegaEmbed('#vegaexample', vegaSpec, vegaEmbedOptions)
+    vegaEmbed(this.$el, vegaSpec, vegaEmbedOptions)
   }
 }
 </script>
