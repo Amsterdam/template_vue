@@ -11,17 +11,17 @@ import showText from './ShowText'
 export default {
   data () {
     return {
-      text: this.$route.params.text,
+      text: this.$route.params.text
     }
   },
   components: {
-    'show-text': showText,
+    'show-text': showText
   },
   watch: {
     '$route' (to, from) {
       this.text = to.params.text
       this.setText()
-    },
+    }
   },
   methods: {
     setText () {

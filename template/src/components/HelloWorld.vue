@@ -8,6 +8,12 @@
       <button type="button" class="btn" v-on:click="setText('any other text')">Change text</button>
     </p>
     <p>
+      <label for="input">Demo typeahead (type any digit):</label>
+      <input id="input" class="form-control" type="text" placeholder="Type to search...">
+      <uiv-typeahead v-model="selected" target="#input" :data="items" item-key="key" append-to-body open-on-focus/>
+      <uiv-alert v-show="selected">You selected \{{selected.key}}</uiv-alert>
+    </p>
+    <p>
       <router-link :to="{name: 'HelloAgain', params: { text }}">
         Some link
       </router-link>
@@ -57,6 +63,12 @@ export default {
     'vega-example': vegaExample,
     'leaflet-example': leafletExample
   },
+  data () {
+    return {
+      selected: '',
+      items: Array.from(Array(100).keys()).map(i => ({key: i.toString() + ' element'}))
+    }
+  },
   computed: {
     ...mapGetters([
       'text'
@@ -70,7 +82,13 @@ export default {
   watch: {
     'text' (to, from) {
       // Example of a state change watch
-      alert('text has changed')
+      console.log('text has changed', from, to)
+    },
+    'selected' (to, from) {
+      const found = this.items.find(i => i.key === to.key)
+      if (found) {
+        console.log('you have selected', found.key)
+      }
     }
   }
 }

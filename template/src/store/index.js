@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     // Register all state data in the state object
-    text: null
+    text: 'NoText'
   },
   actions: {
     // Actions are available to manipulate the state
