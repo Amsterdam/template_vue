@@ -4,23 +4,43 @@
     <p>
       \{{text}}
     </p>
+
     <p>
-      <button type="button" class="btn" v-on:click="setText('any other text')">Change text</button>
+      <button
+        type="button"
+        class="action primary"
+        v-on:click="setText('any other text')">
+        Change text
+      </button>
     </p>
-    <p>
-      <label for="input">Demo typeahead (type any digit):</label>
-      <input id="input" class="form-control" type="text" placeholder="Type to search...">
-      <uiv-typeahead v-model="selected" target="#input" :data="items" item-key="key" append-to-body open-on-focus/>
-      <uiv-alert v-show="selected">You selected \{{selected.key}}</uiv-alert>
-    </p>
+
+    <div class="rij mode_input text rij_verplicht">
+      <div class="label">
+        <label for="formInput">Input label</label>
+      </div>
+
+      <div class="invoer">
+        <input type="text"
+               id="formInput"
+               class="input"
+               placeholder="Placeholder text">
+      </div>
+
+      <button class="action primary" :disabled="true">
+        <span class="value">Do</span>
+      </button>
+      <button class="action secondary-blue">Clear</button>
+    </div>
+
     <p>
       <router-link :to="{name: 'HelloAgain', params: { text }}">
         Some link
       </router-link>
     </p>
+
     <div>
-      <table class="table table-sm table-striped table-bordered">
-        <thead class="text-center">
+      <table class="">
+        <thead class="">
         <tr>
           <th colspan="3">Examples</th>
         </tr>
@@ -30,7 +50,7 @@
           <th>Leaflet</th>
         </tr>
         </thead>
-        <tbody class="text-center">
+        <tbody class="">
         <tr>
           <td>
             <d3-example></d3-example>
@@ -50,6 +70,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+
 import helloAgain from './HelloAgain'
 import d3Example from './D3Example'
 import vegaExample from './VegaExample'

@@ -1,21 +1,28 @@
 <!--Example of a component that uses Leaflet-->
 <template>
-  <div class="map"></div>
+  <div>
+    <h2>Amsterdam</h2>
+    <div :ref="mapRef" class="map"></div>
+  </div>
 </template>
 
 <script>
-import L from 'leaflet'
+import { amsMap } from '@/services/map.js'
 
 export default {
+  data () {
+    return {
+      mapRef: `${this._uid}.leafletExample`
+    }
+  },
   mounted () {
-    let map = L.map(this.$el).setView([51.505, -0.09], 13)
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map)
+    amsMap(this.$refs[this.mapRef])
   }
 }
 </script>
 
 <style scoped>
-.map {height: 400px}
+.map {
+  height: 300px
+}
 </style>

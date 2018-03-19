@@ -9,6 +9,11 @@
 - [For this template](http://vuejs-templates.github.io/webpack): common questions specific to this template are answered and each part is described in greater detail
 - [For Vue 2.0](http://vuejs.org/guide/): general information about how to work with Vue, not specific to this template
 
+## Required
+
+Node > v6.11
+Npm >= 3.5
+
 ## Usage
 
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It is recommended to use npm 3+ for a more efficient dependency tree.**
@@ -31,6 +36,15 @@ $ vue init webpack#develop my-project
 
 The development server will run on port 8080 by default. If that port is already in use on your machine, the next free port will be used.
 
+## Docker
+
+A docker compose file is available to run the application in a docker.
+
+## Jenkins
+
+A template Jenkins  file is available for deployment
+
+ 
 ## What's Included
 
 - `npm run dev`: first-in-class development experience.

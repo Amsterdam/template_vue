@@ -2,26 +2,23 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 {{/if_eq}}
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'leaflet/dist/leaflet.css'
+
+import 'stijl/css/ams-stijl.css'
+import '../static/app.scss'
 
 import Vue from 'vue'
 import { mapGetters, mapActions } from 'vuex'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import BootstrapVue from 'bootstrap-vue'
-import * as uiv from 'uiv'
 
 import App from './App'
 import router from './router'
 import store from './store'
-import util from './services/util'
+import { readData } from './services/datareader'
 
 Vue.use(VueAxios, axios)
-Vue.use(BootstrapVue)
-Vue.use(uiv, {prefix: 'uiv'})
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -44,7 +41,7 @@ let vueApp = new Vue({
     }),
     async init () {
       const url = 'https://jsonplaceholder.typicode.com/posts/1'
-      let data = await util.readData(url)
+      let data = await readData(url)
       this.setText(data.title)
     }
   }
