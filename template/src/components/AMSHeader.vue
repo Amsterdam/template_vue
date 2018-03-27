@@ -1,34 +1,27 @@
 <template>
-  <div class="ams-header">
+  <div class="container">
     <header>
-      <img class="ams-header__logo" src="../../static/logo-short.svg" height="45px">
+      <img class="logo" src="../../static/logo-short.svg">
+      <h1>TITEL</h1>
     </header>
-    <span class="header-title"><b>TITEL</b></span>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'AMSHeader',
-  components: {
-  }
+  name: 'AMSHeader'
 }
-
 </script>
 
 <style lang="scss" scoped>
-.ams-header {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  padding: .5rem;
+header {
+  margin-top: 10px;
+}
 
-  .header-title {
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
-    font-size: 1.7rem;
-  }
+.logo {
+  height: 45px;
+  margin-left: -18px;
+  margin-right: 15px;
+  float: left;
 }
 </style>

@@ -8,28 +8,22 @@
     <p>
       <button
         type="button"
-        class="action primary"
-        v-on:click="setText('any other text')">
+        class="btn btn-primary"
+        @click="setText('any other text')">
         Change text
       </button>
     </p>
 
-    <div class="rij mode_input text rij_verplicht">
-      <div class="label">
-        <label for="formInput">Input label</label>
-      </div>
-
-      <div class="invoer">
-        <input type="text"
-               id="formInput"
-               class="input"
-               placeholder="Placeholder text">
-      </div>
-
-      <button class="action primary" :disabled="true">
-        <span class="value">Do</span>
+    <div class="form-group">
+      <label for="formInput">Input label</label>
+      <input type="text"
+             id="formInput"
+             class="form-control"
+             placeholder="Placeholder text">
+      <button type="button" class="btn btn-primary" :disabled="true">
+        Do
       </button>
-      <button class="action secondary-blue">Clear</button>
+      <button type="button" class="btn btn-secondary">Clear</button>
     </div>
 
     <p>
@@ -39,8 +33,8 @@
     </p>
 
     <div>
-      <table class="">
-        <thead class="">
+      <table class="table">
+        <thead>
         <tr>
           <th colspan="3">Examples</th>
         </tr>

@@ -1,0 +1,45 @@
+@import "~stijl/scss/ams-colorpalette";
+
+$enable-rounded: false;
+
+$font-family-sans-serif:      $avenirnext;
+$font-family-base:            $avenirnext;
+
+$white:    $ams-wit;
+$gray-100: $ams-lichtgrijs;
+$gray-200: $ams-lichtgrijs;
+$gray-300: $ams-lichtgrijs;
+$gray-400: $ams-middengrijs;
+$gray-500: $ams-middengrijs;
+$gray-600: $ams-middengrijs;
+$gray-700: $ams-antraciet;
+$gray-800: $ams-antraciet;
+$gray-900: $ams-antraciet;
+$black:    $ams-zwart;
+
+$blue:    $ams-blauw;
+$indigo:  $ams-donkerblauw;
+$purple:  $ams-paars;
+$pink:    $ams-magenta;
+$red:     $ams-rood;
+$orange:  $ams-oranje;
+$yellow:  $ams-geel;
+$green:   $ams-donkergroen;
+$teal:    $ams-groen;
+$cyan:    $ams-donkerblauw;
+
+$link-color: $ams-donkergrijs;
+$link-decoration: underline;
+
+$line-height-base:            1.25;
+
+$primary: $ams-rood;
+
+footer {
+  background-color: $ams-donkergrijs;
+  color: $ams-wit;
+  a {
+    color: $ams-wit;
+  }
+}
+
