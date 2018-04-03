@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ams-header>Header</ams-header>
+    <ams-header :title="title"></ams-header>
 
     <div id="app" class="container">
       <router-view></router-view>
@@ -23,6 +23,11 @@ export default {
     'ams-header': amsHeader,
     'ams-footer': amsFooter,
     'loading-component': loadingComponent
+  },
+  data () {
+    return {
+      title: 'TITLE'
+    }
   }
 }
 </script>

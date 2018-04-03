@@ -1,27 +1,25 @@
 <template>
-  <div class="container">
+  <div class="container mt-2">
     <header>
-      <img class="logo" src="../../static/logo-short.svg">
-      <h1>TITEL</h1>
+      <img class="logo" src="../../../static/logo-short.svg">
+      <h2><b>{{title}}</b></h2>
     </header>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AMSHeader'
+  props: [
+    'title'
+  ]
 }
 </script>
 
 <style lang="scss" scoped>
-header {
-  margin-top: 10px;
-}
-
-.logo {
-  height: 45px;
-  margin-left: -18px;
-  margin-right: 15px;
-  float: left;
-}
+  .logo {
+    height: 45px;
+    margin-left: -18px;
+    margin-right: 15px;
+    float: left;
+  }
 </style>

@@ -1,9 +1,10 @@
 @import "~stijl/scss/ams-colorpalette";
 
-$enable-rounded: false;
+$enable-rounded:     false;
+$enable-transitions: false;
 
-$font-family-sans-serif:      $avenirnext;
-$font-family-base:            $avenirnext;
+$font-family-sans-serif: $avenirnext;
+$font-family-base:       $avenirnext;
 
 $white:    $ams-wit;
 $gray-100: $ams-lichtgrijs;
@@ -28,12 +29,13 @@ $green:   $ams-donkergroen;
 $teal:    $ams-groen;
 $cyan:    $ams-donkerblauw;
 
-$link-color: $ams-donkergrijs;
-$link-decoration: underline;
-
-$line-height-base:            1.25;
-
 $primary: $ams-rood;
+
+$link-color:      $ams-donkergrijs;
+$link-decoration: underline;
+$link-hover-color: $ams-rood;
+
+$line-height-base: 1.25;
 
 footer {
   background-color: $ams-donkergrijs;
@@ -43,3 +45,12 @@ footer {
   }
 }
 
+.nav {
+  background-color: $ams-lichtgrijs;
+  .nav-link {
+    text-decoration: none;
+    &:hover {
+      color: $ams-rood;
+    }
+  }
+}

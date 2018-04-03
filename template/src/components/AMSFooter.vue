@@ -1,25 +1,17 @@
 <template>
-  <footer>
-    <div class="container">
-      <h2>Colofon</h2>
-      <p>
-      TITEL is gemaakt door OPDRACHTNEMER in opdracht van OPDRACHTGEVER.<br>
-      Contact: <a href="mailto:OPDRACHTNEMER@amsterdam.nl">OPDRACHTNEMER@amsterdam.nl</a>
-      </p>
-
+  <footer class="container-fluid mt-2 pt-2 pb-1">
+    <div>
       <h2>Disclaimer</h2>
       <p>
-      De inhoud van TITEL is met uiterste zorgvuldigheid tot stand gebracht.
-      De inhoud wordt regelmatig gecontroleerd en geactualiseerd.
-      OPDRACHTNEMER kan echter niet aansprakelijk worden gesteld voor de juistheid, volledigheid en actualiteit van de website.
-      OPDRACHTNEMER kan in het bijzonder niet aansprakelijk worden gesteld voor eventuele schade of consequenties ontstaan door direct of indirect gebruik van de inhoud van de website.
+        {{title}} is gemaakt door {{author}}.
       </p>
       <p>
-      Alle informatie op TITEL valt onder Copyright &copy; van OPRACHTNEMER, tenzij een andere bron is vermeld.<br>
-      Het overnemen van gegevens is met de volgende bronvermelding toegestaan: <b>OPDRACHTNEMER</b>.
+        De inhoud van {{title}} is met uiterste zorgvuldigheid tot stand gebracht.
+        De inhoud wordt regelmatig gecontroleerd en geactualiseerd.
       </p>
       <p>
-        Wilt u informatie hergebruiken, neem dan even contact op met OPDRACHTNEMER via <a href="mailto:OPDRACHTNEMER@amsterdam.nl">OPDRACHTNEMER@amsterdam.nl</a>.
+        {{author}} kan echter niet aansprakelijk worden gesteld voor de juistheid, volledigheid en actualiteit van de website.
+        {{author}} kan in het bijzonder niet aansprakelijk worden gesteld voor eventuele schade of consequenties ontstaan door direct of indirect gebruik van de inhoud van de website.
       </p>
     </div>
   </footer>
@@ -27,7 +19,15 @@
 
 <script>
 export default {
-  name: 'AMSFooter'
+  name: 'AMSFooter',
+  props: [
+    'title'
+  ],
+  data () {
+    return {
+      author: 'Datapunt Amsterdam'
+    }
+  }
 }
 </script>
 
