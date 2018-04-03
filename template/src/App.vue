@@ -32,7 +32,7 @@ export default {
   },
   data () {
     return {
-      title: 'TITLE'
+      title: '{{description}}'
     }
   }
 }

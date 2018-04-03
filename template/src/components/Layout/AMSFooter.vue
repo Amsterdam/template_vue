@@ -25,7 +25,7 @@ export default {
   ],
   data () {
     return {
-      author: 'Datapunt Amsterdam'
+      author: '{{author}}'
     }
   }
 }

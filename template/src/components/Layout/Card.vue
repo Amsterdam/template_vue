@@ -1,7 +1,7 @@
 <template>
   <div class="card mt-2">
     <h3 class="card-header">
-      {{title}}
+      \{{title}}
     </h3>
     <div class="card-body">
       <slot></slot>
