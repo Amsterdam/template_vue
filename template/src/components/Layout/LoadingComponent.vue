@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { HTTPStatus } from '../services/datareader'
+import { HTTPStatus } from '../../services/datareader'
 
 export default {
   name: 'LoadingComponent',

@@ -1,38 +1,40 @@
 <!--Example of a component with a link and how to watch for state changes-->
 <template>
   <div>
-    <p>
-      \{{text}}
-    </p>
+    <card title="Input example">
+      <p>
+        \{{text}}
+      </p>
 
-    <p>
-      <button
-        type="button"
-        class="btn btn-primary"
-        @click="setText('any other text')">
-        Change text
-      </button>
-    </p>
+      <p>
+        <button
+          type="button"
+          class="btn btn-primary"
+          @click="setText('any other text')">
+          Change text
+        </button>
+      </p>
 
-    <div class="form-group">
-      <label for="formInput">Input label</label>
-      <input type="text"
-             id="formInput"
-             class="form-control"
-             placeholder="Placeholder text">
-      <button type="button" class="btn btn-primary" :disabled="true">
-        Do
-      </button>
-      <button type="button" class="btn btn-secondary">Clear</button>
-    </div>
+      <div class="form-group">
+        <label for="formInput">Input label</label>
+        <input type="text"
+               id="formInput"
+               class="form-control mb-2"
+               placeholder="Placeholder text">
+        <button type="button" class="btn btn-primary" :disabled="true">
+          Do
+        </button>
+        <button type="button" class="btn btn-secondary">Clear</button>
+      </div>
+    </card>
 
-    <p>
+    <card title="Link example">
       <router-link :to="{name: 'HelloAgain', params: { text }}">
         Some link
       </router-link>
-    </p>
+    </card>
 
-    <div>
+    <card title="Library examples">
       <table class="table">
         <thead>
         <tr>
@@ -58,13 +60,14 @@
         </tr>
         </tbody>
       </table>
-    </div>
+    </card>
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
+import card from './Layout/Card'
 import helloAgain from './HelloAgain'
 import d3Example from './D3Example'
 import vegaExample from './VegaExample'
@@ -73,6 +76,7 @@ import leafletExample from './LeafletExample'
 export default {
   name: 'HelloWorld',
   components: {
+    'card': card,
     'hello-again': helloAgain,
     'd3-example': d3Example,
     'vega-example': vegaExample,
@@ -80,8 +84,6 @@ export default {
   },
   data () {
     return {
-      selected: '',
-      items: Array.from(Array(100).keys()).map(i => ({key: i.toString() + ' element'}))
     }
   },
   computed: {
@@ -98,12 +100,6 @@ export default {
     'text' (to, from) {
       // Example of a state change watch
       console.log('text has changed', from, to)
-    },
-    'selected' (to, from) {
-      const found = this.items.find(i => i.key === to.key)
-      if (found) {
-        console.log('you have selected', found.key)
-      }
     }
   }
 }
