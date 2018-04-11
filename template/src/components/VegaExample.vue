@@ -5,7 +5,7 @@
 <script>
 import vegaEmbed from 'vega-embed'
 
-import vegaSpec from './vegaExample'
+import vegaSpec from './vega-example-spec'
 
 const vegaEmbedOptions = {
   'actions': {
