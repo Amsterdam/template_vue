@@ -6,7 +6,8 @@ import HelloAgain from '@/components/HelloAgain'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
+  base: process.env.ROUTER_BASE,
   routes: [
     {
       path: '/',
