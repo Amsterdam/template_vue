@@ -23,16 +23,17 @@ function sleep (ms) {
 /**
  * Simple HTTP GET method for a given url
  * @param url
+ * @param headers
  * @param nTries optional parameter specifying the number of retries, default = 5
  * @returns {Promise<*>}
  */
-async function get (url, nTries = 5) {
+export async function get (url, headers = null, nTries = 5) {
   let result
   let nTry = 0
   do {
     try {
       HTTPStatus.pending++ // Track pending requests
-      result = await axios.get(url)
+      result = await (headers ? axios.get(url, { headers }) : axios.get(url))
     } catch (error) {
       console.error('Retry...', url)
       nTry++
@@ -58,9 +59,10 @@ async function get (url, nTries = 5) {
  * The endpoint is asked for data until there is no more data available (next = null)
  * A pagesize of 1000 is used to limit the number of successive requests
  * @param url
+ * @param headers
  * @returns {Promise<Array>}
  */
-export async function readPaginatedData (url) {
+export async function readPaginatedData (url, headers = null) {
   let next = url
   let results = []
   let page = 1
@@ -69,7 +71,7 @@ export async function readPaginatedData (url) {
   while (next) {
     try {
       const requestUrl = `${url}${concatParam}page=${page}&page_size=${pageSize}`
-      let response = await get(requestUrl)
+      let response = await (headers ? get(requestUrl, headers) : get(requestUrl))
       next = response.data._links.next.href
       results = results.concat(response.data.results)
       page += 1
@@ -83,10 +85,11 @@ export async function readPaginatedData (url) {
 /**
  * Requests data from a given url, resolving to response.data (default) or any other optionally specified value
  * @param url
+ * @param headers
  * @param resolve
  * @returns {Promise<*>}
  */
-export async function readData (url, resolve = d => d.data) {
-  let response = await get(url)
+export async function readData (url, headers = null, resolve = d => d.data) {
+  let response = await (headers ? get(url, headers) : get(url))
   return resolve(response)
 }
