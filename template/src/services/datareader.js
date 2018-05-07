@@ -71,7 +71,7 @@ export async function readPaginatedData (url, headers = null) {
   while (next) {
     try {
       const requestUrl = `${url}${concatParam}page=${page}&page_size=${pageSize}`
-      let response = await (headers ? get(requestUrl, headers) : get(requestUrl))
+      let response = await get(requestUrl, headers)
       next = response.data._links.next.href
       results = results.concat(response.data.results)
       page += 1
@@ -90,6 +90,6 @@ export async function readPaginatedData (url, headers = null) {
  * @returns {Promise<*>}
  */
 export async function readData (url, headers = null, resolve = d => d.data) {
-  let response = await (headers ? get(url, headers) : get(url))
+  let response = await get(url, headers)
   return resolve(response)
 }
