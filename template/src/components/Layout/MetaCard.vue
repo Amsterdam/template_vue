@@ -3,15 +3,16 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link" :class="{ active: state===STATES.SHOWING_DATA }" @click="state = STATES.SHOWING_DATA" href="#">\{{ title || "Title Placeholder" }}</a>
+          <!-- prevent default to stop the page from bouncing around when user switches between data or info states -->
+          <a class="nav-link" :class="{ active: state===STATES.SHOWING_DATA }" @click.self.prevent="state = STATES.SHOWING_DATA" href="#">\{{ title || "Title Placeholder" }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" :class="{ active: state===STATES.SHOWING_INFO }" @click="state = STATES.SHOWING_INFO" href="#">info</a>
+          <a class="nav-link" :class="{ active: state===STATES.SHOWING_INFO }" @click.self.prevent="state = STATES.SHOWING_INFO" href="#">info</a>
         </li>
       </ul>
     </div>
     <template v-if="state===STATES.SHOWING_DATA">
-      <div class="card-body" style="overflow-y: scroll">
+      <div class="card-body" style="overflow: hidden">
         <slot name="data">
           Showing placeholder for data view.
         </slot>
@@ -19,7 +20,7 @@
     </template>
     <template v-if="state===STATES.SHOWING_INFO">
       <!-- The info use a slightly smaller font-size hence the info-text class -->
-      <div class="card-body info-text" style="overflow-y: scroll">
+      <div class="card-body info-text" style="overflow-y: auto">
         <slot name="info">
           Showing placeholder for info view.
         </slot>

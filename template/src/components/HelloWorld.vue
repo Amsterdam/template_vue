@@ -60,6 +60,24 @@
         </tr>
         </tbody>
       </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th width="33%">MetaCard</th>
+            <th>MetaCard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <meta-card-example></meta-card-example>
+            </td>
+            <td>
+              <meta-card-example></meta-card-example>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </card>
   </div>
 </template>
@@ -72,6 +90,7 @@ import helloAgain from './HelloAgain'
 import d3Example from './D3Example'
 import vegaExample from './VegaExample'
 import leafletExample from './LeafletExample'
+import metaCardExample from './MetaCardExample'
 
 export default {
   name: 'HelloWorld',
@@ -80,7 +99,8 @@ export default {
     'hello-again': helloAgain,
     'd3-example': d3Example,
     'vega-example': vegaExample,
-    'leaflet-example': leafletExample
+    'leaflet-example': leafletExample,
+    'meta-card-example': metaCardExample
   },
   data () {
     return {
