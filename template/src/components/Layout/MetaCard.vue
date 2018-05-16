@@ -10,18 +10,21 @@
         </li>
       </ul>
     </div>
-    <div class="card-body">
-      <template v-if="state===STATES.SHOWING_DATA">
+    <template v-if="state===STATES.SHOWING_DATA">
+      <div class="card-body" style="overflow-y: scroll">
         <slot name="data">
           Showing placeholder for data view.
         </slot>
-      </template>
-      <template v-if="state===STATES.SHOWING_INFO">
+      </div>
+    </template>
+    <template v-if="state===STATES.SHOWING_INFO">
+      <!-- The info use a slightly smaller font-size hence the info-text class -->
+      <div class="card-body info-text" style="overflow-y: scroll">
         <slot name="info">
           Showing placeholder for info view.
         </slot>
-      </template>
-    </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -54,7 +57,32 @@ export default {
   }
 }
 
-.info-button {
-  vertical-align: middle
+.info-text {
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.info-text h1 {
+  font-size: 2rem
+}
+
+.info-text h2 {
+  font-size: 1.75
+}
+
+.info-text h3 {
+  font-size: 1.5rem
+}
+
+.info-text h4 {
+  font-size: 1.25rem
+}
+
+.info-text h5 {
+  font-size: 1rem
+}
+
+.info-text h6 {
+  font-size: 0.8rem
 }
 </style>
