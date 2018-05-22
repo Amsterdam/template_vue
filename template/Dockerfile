@@ -27,7 +27,8 @@ RUN git config --global url."https://".insteadOf git:// && \
 
 COPY . /app
 
-RUN npm run build && cp -r /app/dist/. /var/www/html/
+RUN mkdir /var/www/html/{{ name }}
+RUN npm run build && cp -r /app/dist/. /var/www/html/{{ name }}
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
