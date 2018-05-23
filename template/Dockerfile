@@ -1,4 +1,8 @@
-FROM node:8.9
+# Jenkins workaround
+FROM nginx:stable-alpine
+
+# Build our application:
+FROM node:8.9 as builder
 
 MAINTAINER datapunt.ois@amsterdam.nl
 
@@ -27,12 +31,9 @@ RUN git config --global url."https://".insteadOf git:// && \
 
 COPY . /app
 
-RUN mkdir /var/www/html/{{ name }}
-RUN npm run build && cp -r /app/dist/. /var/www/html/{{ name }}
+RUN npm run build
 
-# forward request and error logs to docker log collector
-RUN ln -sf /dev/stdout /var/log/nginx/access.log \
- && ln -sf /dev/stderr /var/log/nginx/error.log
-
-COPY default.conf /etc/nginx/conf.d/
-CMD ["nginx", "-g", "daemon off;"]
+# Server image:
+FROM nginx:stable-alpine
+RUN mkdir -p /usr/share/nginx/html/{{ name }}
+COPY --from=builder /app/dist /usr/share/nginx/html/{{ name }}
