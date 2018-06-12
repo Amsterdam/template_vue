@@ -6,7 +6,7 @@
           <ul class="tabs">
             <li :class="{ selected: state===STATES.SHOWING_DATA }">
               <!-- prevent default to stop the page from bouncing around when user switches between data or info states -->
-              <a @click.self.prevent="state = STATES.SHOWING_DATA" href="#">{{ title || "Title Placeholder" }}</a>
+              <a @click.self.prevent="state = STATES.SHOWING_DATA" href="#">\{{ title || "Title Placeholder" }}</a>
             </li>
             <li :class="{ selected: state===STATES.SHOWING_INFO }">
               <a class="nav-link" @click.self.prevent="state = STATES.SHOWING_INFO" href="#">info</a>

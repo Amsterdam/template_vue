@@ -3,7 +3,7 @@
   <div>
     <card title="Input example">
       <p>
-        {{text}}
+        \{{text}}
       </p>
       <button class="action primary"
               @click="setText('any other text')"
