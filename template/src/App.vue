@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <ams-header :title="title">Header</ams-header>
-
-    <ams-menu>Menu</ams-menu>
-
-    <ams-content>
-      <router-view></router-view>
-    </ams-content>
-
-    <ams-footer :title="title">Footer</ams-footer>
-
+  <div id="app">
+    <div class="container app-container">
+      <div class="container">
+        <ams-header :title="title">Header</ams-header>
+        <ams-menu>Menu</ams-menu>
+        <router-view></router-view>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row bg-darkgrey footer">
+        <ams-footer></ams-footer>
+      </div>
+    </div>
     <loading-component></loading-component>
   </div>
 </template>

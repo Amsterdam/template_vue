@@ -1,5 +1,5 @@
 <template>
-  <div class="card text-center mt-2 metacard">
+  <div class="card text-center metacard">
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">

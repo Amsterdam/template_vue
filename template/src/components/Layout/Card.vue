@@ -1,5 +1,5 @@
 <template>
-  <div class="card mt-2">
+  <div class="card">
     <h3 class="card-header">
       \{{title}}
     </h3>

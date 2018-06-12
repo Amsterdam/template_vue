@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-2">
+  <div class="container">
     <header>
       <img class="logo" src="../../../static/logo-short.svg">
       <h2><b>\{{title}}</b></h2>

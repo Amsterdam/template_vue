@@ -1,5 +1,5 @@
 <template>
-  <div class="menu mt-3">
+  <div class="menu">
 
     <div class="container">
       <nav class="nav nav-pills justify-content-end">

@@ -1,7 +1,11 @@
-//
-//  Application specific styling
-//  specific
-//
+@import "~stijl/dist/scss/ams-colorpalette";
 
-@import "custom";
-@import "~bootstrap/scss/bootstrap";
+.nav {
+  background-color: $ams-lichtgrijs;
+  .nav-link {
+    text-decoration: none;
+    &:hover {
+      color: $ams-rood;
+    }
+  }
+}
