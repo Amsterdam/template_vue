@@ -1,9 +1,13 @@
 <template>
-  <div id="app">
+  <div>
     <div class="container app-container">
       <div class="container">
         <ams-header :title="title">Header</ams-header>
+      </div>
+      <div class="container">
         <ams-menu>Menu</ams-menu>
+      </div>
+      <div class="container">
         <router-view></router-view>
       </div>
     </div>

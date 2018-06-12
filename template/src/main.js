@@ -3,7 +3,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 {{/if_eq}}
 import 'leaflet/dist/leaflet.css'
-
+import 'stijl/dist/css/ams-stijl.css'
 import '../static/app.scss'
 
 import Vue from 'vue'

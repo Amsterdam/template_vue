@@ -3,29 +3,30 @@
   <div>
     <card title="Input example">
       <p>
-        \{{text}}
+        {{text}}
       </p>
+      <button class="action primary"
+              @click="setText('any other text')"
+      >
+        <span class="value">  Change text</span>
+      </button>
 
-      <p>
-        <button
-          type="button"
-          class="btn btn-primary"
-          @click="setText('any other text')">
-          Change text
-        </button>
-      </p>
+      <div class="rij mode_input text rij_verplicht">
+        <div class="label">
+          <label for="formInput">Input label</label>
+        </div>
 
-      <div class="form-group">
-        <label for="formInput">Input label</label>
-        <input type="text"
-               id="formInput"
-               class="form-control mb-2"
-               placeholder="Placeholder text">
-        <button type="button" class="btn btn-primary" :disabled="true">
-          Do
-        </button>
-        <button type="button" class="btn btn-secondary">Clear</button>
+        <div class="invoer">
+          <input name="" id="formInput" value="" class="input" type="text" placeholder="placeholder text">
+        </div>
       </div>
+
+      <button class="action primary" :disabled="true">
+        <span class="value">Disabled</span>
+      </button>
+      <button class="action secundary-blue ">
+        <span class="value">Secundaire button</span>
+      </button>
     </card>
 
     <card title="Link example">
@@ -34,51 +35,19 @@
       </router-link>
     </card>
 
-    <card title="Library examples">
-      <table class="table">
-        <thead>
-        <tr>
-          <th colspan="3">Examples</th>
-        </tr>
-        <tr>
-          <th width="33%">D3</th>
-          <th width="33%">Vega</th>
-          <th>Leaflet</th>
-        </tr>
-        </thead>
-        <tbody class="">
-        <tr>
-          <td>
-            <d3-example></d3-example>
-          </td>
-          <td>
-            <vega-example></vega-example>
-          </td>
-          <td>
-            <leaflet-example></leaflet-example>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-      <table class="table">
-        <thead>
-          <tr>
-            <th width="33%">MetaCard</th>
-            <th>MetaCard</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <meta-card-example></meta-card-example>
-            </td>
-            <td>
-              <meta-card-example></meta-card-example>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <card title="D3 example">
+      <d3-example></d3-example>
     </card>
+    <card title="vega example">
+      <vega-example></vega-example>
+    </card>
+    <card title="leaflet example">
+      <leaflet-example></leaflet-example>
+    </card>
+    <div>
+      <h1>Tabs example</h1>
+      <meta-card-example></meta-card-example>
+    </div>
   </div>
 </template>
 

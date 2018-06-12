@@ -1,10 +1,16 @@
 <template>
-  <div class="card">
-    <h3 class="card-header">
-      \{{title}}
-    </h3>
-    <div class="card-body">
-      <slot></slot>
+  <div class="row">
+    <div class="col-12 card">
+      <div class="row">
+        <div class="col-12 grid-title">
+          <h2>\{{title}}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <slot></slot>
+        </div>
+      </div>
     </div>
   </div>
 </template>

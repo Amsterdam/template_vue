@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="row">
     <header>
       <img class="logo" src="../../../static/logo-short.svg">
       <h2><b>\{{title}}</b></h2>
@@ -21,5 +21,9 @@ export default {
     margin-left: -18px;
     margin-right: 15px;
     float: left;
+  }
+
+  .row {
+    display: block;
   }
 </style>

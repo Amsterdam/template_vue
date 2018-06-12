@@ -1,17 +1,19 @@
 <template>
-  <div class="menu">
-
-    <div class="container">
-      <nav class="nav nav-pills justify-content-end">
-        <router-link to="/" class="nav-link">
-          <span class="linklabel">
-            Home
-          </span>
-        </router-link>
+  <div class="row menu">
+    <div class="container type-nav-primair">
+      <nav>
+        <ul class="links horizontal">
+          <li class="selected">
+            <router-link to="/" class="nav-link">
+              <span class="linklabel">
+                Home
+              </span>
+            </router-link>
+          </li>
+        </ul>
       </nav>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -24,5 +26,6 @@ export default {
 
 .menu {
   background-color: $ams-lichtgrijs;
+  min-height: 45px;
 }
 </style>

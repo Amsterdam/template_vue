@@ -26,7 +26,7 @@
     "proj4": "^2.4.4",
     "proj4leaflet": "^1.0.2",
     "sass-loader": "^6.0.7",
-    "stijl": "Amsterdam/stijl.git",
+    "stijl": "Amsterdam/stijl.git#feature/tweaks",
     "vega-canvas": "^1.0.1",
     "vega-embed": "^3.4.0",
     "vega-lite": "^2.3.1",
