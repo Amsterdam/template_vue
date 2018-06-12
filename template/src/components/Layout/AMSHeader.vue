@@ -25,5 +25,10 @@ export default {
 
   .row {
     display: block;
+    padding-top: 1rem;
+  }
+
+  h2 {
+    margin-top: 0;
   }
 </style>

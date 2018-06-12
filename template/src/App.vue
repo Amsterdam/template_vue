@@ -7,7 +7,7 @@
       <div class="container">
         <ams-menu>Menu</ams-menu>
       </div>
-      <div class="container">
+      <div class="content container">
         <router-view></router-view>
       </div>
     </div>
@@ -44,6 +44,8 @@ export default {
 }
 </script>
 
-<!-- Global styling -->
-<style>
+<style scoped>
+  .content {
+    margin-top: 1rem;
+  }
 </style>
